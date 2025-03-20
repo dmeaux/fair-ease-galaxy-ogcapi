@@ -28,9 +28,9 @@ GALAXY_ACCESS_KEY = "<the API access ley you created under your login>"
 
 ## Phase 1 (FAIR-EASE Hackathon 2025-03-17 - 2025-03-21)
 
-Explore the Galaxy API related to workflows and see how it can be interrogated in order to be served as an OGC API - Processes compliant service. The first step will be to interrogate Galaxy's API for a given workflow and search for relavent tool data to fill in the corresponding parts for describing a process compliant with the OGC API - Processes standard.
+Explore the Galaxy API related to workflows to see how it can be interrogated in order to be served as an OGC API - Processes compliant service. The first step will be to interrogate Galaxy's API for a given workflow and search for relavant tool data to fill in the corresponding parts for describing a process compliant with the OGC API - Processes standard.
 
-Currently, using the Swagger interface of FastAPI, you can return an OGC API - Process using a Galaxy `workflow_id`.
+Currently, using the Swagger interface of FastAPI, you can return an OGC API - Process record with very basic information using a Galaxy `workflow_id`.
 
 **Example:**
 
