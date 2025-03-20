@@ -1,0 +1,68 @@
+[
+  {
+    "model_class": "Tool",
+    "id": "toolshed.g2.bx.psu.edu/repos/ecology/obis_data/obis_data/0.0.2",
+    "name": "OBIS occurences",
+    "version": "0.0.2",
+    "description": "retrieve data",
+    "labels": ["marine"],
+    "edam_operations": [],
+    "edam_topics": ["topic_0610", "topic_3050"],
+    "hidden": "",
+    "is_workflow_compatible": true,
+    "xrefs": [],
+    "tool_shed_repository": {
+      "name": "obis_data",
+      "owner": "ecology",
+      "changeset_revision": "5bae75c49f2e",
+      "tool_shed": "toolshed.g2.bx.psu.edu"
+    },
+    "panel_section_id": "get_data",
+    "panel_section_name": "Get Data",
+    "form_style": "regular"
+  },
+  {
+    "model_class": "Tool",
+    "id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.5+galaxy0",
+    "name": "Advanced Cut",
+    "version": "9.5+galaxy0",
+    "description": "columns from a table (cut)",
+    "labels": [],
+    "edam_operations": [],
+    "edam_topics": [],
+    "hidden": "",
+    "is_workflow_compatible": true,
+    "xrefs": [],
+    "tool_shed_repository": {
+      "name": "text_processing",
+      "owner": "bgruening",
+      "changeset_revision": "3dc70b59608c",
+      "tool_shed": "toolshed.g2.bx.psu.edu"
+    },
+    "panel_section_id": "text_manipulation",
+    "panel_section_name": "Text Manipulation",
+    "form_style": "regular"
+  },
+  {
+    "model_class": "Tool",
+    "id": "toolshed.g2.bx.psu.edu/repos/ecology/obisindicators/obisindicators/0.0.2",
+    "name": "Ocean biodiversity indicators",
+    "version": "0.0.2",
+    "description": "from OBIS",
+    "labels": [],
+    "edam_operations": [],
+    "edam_topics": ["topic_0610", "topic_3050"],
+    "hidden": "",
+    "is_workflow_compatible": true,
+    "xrefs": [],
+    "tool_shed_repository": {
+      "name": "obisindicators",
+      "owner": "ecology",
+      "changeset_revision": "dc187fe78055",
+      "tool_shed": "toolshed.g2.bx.psu.edu"
+    },
+    "panel_section_id": "biodiversity_data_exploration",
+    "panel_section_name": "Biodiversity data exploration",
+    "form_style": "regular"
+  }
+]

@@ -1,0 +1,14 @@
+type: object
+properties:
+  title:
+    type: string
+  description:
+    type: string
+  keywords:
+    type: array
+    items:
+      type: string
+  metadata:
+    type: array
+    items:
+      $ref: "metadata.yaml"

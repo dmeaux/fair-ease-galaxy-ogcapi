@@ -1,0 +1,20 @@
+oneOf:
+  - allOf:
+    - $ref: ../common-core/link.yaml
+    - type: object
+      properties:
+        role:
+          type: string
+  - type: object
+    properties:
+       role:
+          type: string
+       title:
+          type: string
+       lang:
+          type: string
+       value:
+         oneOf:
+           - type: string
+           - type: object
+

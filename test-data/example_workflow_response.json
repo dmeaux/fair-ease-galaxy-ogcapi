@@ -1,0 +1,116 @@
+{
+  "annotation": "From Obis data to Biodiversity indicators",
+  "annotations": null,
+  "create_time": "2025-03-20T09:00:55.189167",
+  "creator": [
+    {
+      "address": null,
+      "alternateName": null,
+      "class": "Person",
+      "email": null,
+      "familyName": null,
+      "faxNumber": null,
+      "givenName": null,
+      "honorificPrefix": null,
+      "honorificSuffix": null,
+      "identifier": "0009-0008-0622-604X",
+      "image": null,
+      "jobTitle": null,
+      "name": "Marie Jossé",
+      "telephone": null,
+      "url": "https://github.com/Marie59"
+    }
+  ],
+  "deleted": false,
+  "email_hash": "fc3527cbaf5b801a8b202092184a7b9f",
+  "hidden": false,
+  "id": "9a4455e353e131db",
+  "importable": false,
+  "inputs": {},
+  "latest_workflow_uuid": "a6664f7d-7392-401e-a859-fcdb90a07946",
+  "license": "CC-BY-4.0",
+  "model_class": "StoredWorkflow",
+  "name": "Marine Omics visualisation",
+  "number_of_steps": null,
+  "owner": "dmeaux",
+  "published": false,
+  "show_in_tool_panel": null,
+  "slug": null,
+  "source_metadata": null,
+  "steps": {
+    "0": {
+      "annotation": "Retrieve one big tabular file",
+      "id": 0,
+      "input_steps": {},
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/obis_data/obis_data/0.0.2",
+      "tool_inputs": {
+        "__input_ext": "input",
+        "__page__": null,
+        "__rerun_remap_job_id__": null,
+        "chromInfo": "/opt/galaxy/tool-data/shared/ucsc/chrom/?.len",
+        "lat_max": "45.0",
+        "lat_min": "41.5",
+        "long_max": "10.0",
+        "long_min": "7.5",
+        "species": null,
+        "taxon": null
+      },
+      "tool_version": "0.0.2",
+      "type": "tool",
+      "when": null
+    },
+    "1": {
+      "annotation": "Keep only the interesting columns",
+      "id": 1,
+      "input_steps": { "input": { "source_step": 0, "step_output": "output" } },
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/9.3+galaxy0",
+      "tool_inputs": {
+        "__page__": null,
+        "__rerun_remap_job_id__": null,
+        "complement": "",
+        "cut_type_options": {
+          "__current_case__": 0,
+          "colnames_option": {
+            "__current_case__": 0,
+            "header": "Y",
+            "list": ["1", "7", "8", "47", "120"]
+          },
+          "cut_element": "-f",
+          "delimiter": ""
+        },
+        "input": { "__class__": "ConnectedValue" }
+      },
+      "tool_version": "9.3+galaxy0",
+      "type": "tool",
+      "when": null
+    },
+    "2": {
+      "annotation": "Compute 5 Ocean biodiversity indicators (shannon, Hill, Pielou,...)",
+      "id": 2,
+      "input_steps": { "input": { "source_step": 1, "step_output": "output" } },
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/obisindicators/obisindicators/0.0.2",
+      "tool_inputs": {
+        "__input_ext": "input",
+        "__page__": null,
+        "__rerun_remap_job_id__": null,
+        "chromInfo": "/opt/galaxy/tool-data/shared/ucsc/chrom/?.len",
+        "colnames": true,
+        "input": { "__class__": "ConnectedValue" },
+        "latitude": "2",
+        "longitude": "3",
+        "records": "5",
+        "resolution": "9",
+        "separator": "t",
+        "species": "4",
+        "type": "0"
+      },
+      "tool_version": "0.0.2",
+      "type": "tool",
+      "when": null
+    }
+  },
+  "tags": ["Ocean", "Marineomics", "earth-system"],
+  "update_time": "2025-03-20T09:00:55.210420",
+  "url": "/api/workflows/9a4455e353e131db",
+  "version": 0
+}

@@ -1,0 +1,13 @@
+type: object
+properties:
+  processID:
+    type: string
+    format: uri
+  inputs:
+    additionalProperties:
+      $ref: "input.yaml"
+  outputs:
+    additionalProperties:
+      $ref: "output.yaml"
+  subscriber:
+    $ref: "subscriber.yaml"

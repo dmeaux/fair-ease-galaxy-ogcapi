@@ -1,0 +1,25 @@
+{
+  "model_class": "Tool",
+  "id": "toolshed.g2.bx.psu.edu/repos/ecology/obis_data/obis_data/0.0.2",
+  "name": "OBIS occurences",
+  "version": "0.0.2",
+  "description": "retrieve data",
+  "labels": ["marine"],
+  "edam_operations": [],
+  "edam_topics": ["topic_0610", "topic_3050"],
+  "hidden": "",
+  "is_workflow_compatible": true,
+  "xrefs": [],
+  "tool_shed_repository": {
+    "name": "obis_data",
+    "owner": "ecology",
+    "changeset_revision": "5bae75c49f2e",
+    "tool_shed": "toolshed.g2.bx.psu.edu"
+  },
+  "link": "/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fecology%2Fobis_data%2Fobis_data%2F0.0.2",
+  "min_width": -1,
+  "target": "galaxy_main",
+  "panel_section_id": "get_data",
+  "panel_section_name": "Get Data",
+  "form_style": "regular"
+}

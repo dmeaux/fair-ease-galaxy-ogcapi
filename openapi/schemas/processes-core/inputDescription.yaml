@@ -1,0 +1,31 @@
+allOf:
+  - $ref: "descriptionType.yaml"
+  - type: object
+    required:
+      - schema
+    properties:
+      schema:
+        $ref: "schema.yaml"
+      dataClasses:
+        type: array
+        items:
+          type: string
+          format: uri
+      minOccurs:
+        type: integer
+        default: 1
+      maxOccurs:
+        oneOf:
+          - type: integer
+            default: 1
+          - type: string
+            enum:
+              - "unbounded"
+      valuePassing:
+        type: array
+        items:
+           type: string
+           enum:
+             - "byValue"
+             - "byReference"
+        default: ["byValue","byReference"]
