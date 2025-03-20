@@ -4,7 +4,6 @@
 
 from __future__ import annotations
 
-import json
 import logging
 from pathlib import Path
 import tomllib
@@ -66,7 +65,6 @@ def _read_credentials_file(credentials_path: Path) -> dict[str, Any]:
 creds = _read_credentials_file(CREDENTIALS_FILEPATH)
 GALAXY_URL = creds["galaxy"]["GALAXY_URL"]
 GALAXY_ACCESS_KEY = creds["galaxy"]["GALAXY_ACCESS_KEY"]
-test_workflow_id = creds["galaxy"]["test_workflow_id"]
 
 app = FastAPI()
 
@@ -158,16 +156,16 @@ def get_tool_ids_from_steps(steps: dict[str, Any]) -> list[str]:
     return [v["tool_id"] for _, v in steps.items()]
 
 
-@app.get("/tools/{tool_id}")
-def get_tool(tool_id: str) -> Any:
-    return fetch_tool_by_id(GALAXY_URL, GALAXY_ACCESS_KEY, tool_id)
+# @app.get("/tools/{tool_id}")
+# def get_tool(tool_id: str) -> Any:
+#     return fetch_tool_by_id(GALAXY_URL, GALAXY_ACCESS_KEY, tool_id)
 
 
 @app.get("/processes/{process_id}", response_model=Process)
 def get_process(process_id: str) -> Any:
     workflow = fetch_workflow_by_id(GALAXY_URL,
                                     GALAXY_ACCESS_KEY,
-                                    test_workflow_id,
+                                    process_id,
                                     )
 
     process_description_type = DescriptionType(
@@ -185,8 +183,58 @@ def get_process(process_id: str) -> Any:
         links=None,
     )
 
-    inputs = get_tool_ids_from_steps(workflow["steps"])
+    # TODO: debug pydantic validation for input models
+    # inputs = get_tool_ids_from_steps(workflow["steps"])
+    inputs = [
+        InputDescription(
+            descriptionType=DescriptionType(
+                title=None,
+                description=None,
+                keywords=None,
+                metadata=None,
+                ),
+            # schema=SchemaModel(
+            #     title=None,
+            #     multipleOf=None,
+            #     maximum=None,
+            #     exclusiveMaximum=None,
+            #     minimum=None,
+            #     exclusiveMinimum=None,
+            #     maxLength=None,
+            #     minLength=0,
+            #     pattern=None,
+            #     maxItems=None,
+            #     minItems=0,
+            #     uniqueItems=None,
+            #     maxProperties=None,
+            #     minProperties=0,
+            #     required={None, },
+            #     enum=[None],
+            #     items=None,
+            #     properties=None,
+            #     additionalProperties=None,
+            #     description=None,
+            #     format=None,
+            #     default=None,
+            #     nullable=None,
+            #     readOnly=None,
+            #     writeOnly=None,
+            #     example=None,
+            #     deprecated=None,
+            #     contentMediaType=None,
+            #     contentEncoding=None,
+            #     contentSchema=None,
+            #     ),
+            dataClasses=None,
+            minOccurs=1,
+            maxOccurs=None,
+            valuePassing=(
+                str(ValuePassingType.BY_VALUE),
+                )
+            )
+        ]
 
+    # TODO: map outputs in galaxy to this
     outputs = [
         OutputDescription(
             descriptionType=DescriptionType(
