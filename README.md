@@ -1,6 +1,6 @@
 # FAIR-EASE Galaxy OGC API
 
-The intent of this project is to create a bridge server between [Galaxy's](https://usegalaxy.org) API and [Open Geospatial Consortium APIs](https://ogc.org/publications).
+The intent of this project is to create a bridge server between [Galaxy's](https://usegalaxy.org) API and [Open Geospatial Consortium APIs](https://ogc.org/publications). It was originally created as a response to a challenge during the [FAIR-EASE](https://fairease.eu/) Hackathon that took place 2024-03-17 through 2024-03-21.
 
 ## Technology Used
 This  project is written in Python and currently requires Python 3.12.
