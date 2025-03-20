@@ -40,7 +40,7 @@ Request:
 
 Response:
 
-[OGC API - Processes response](./images/Screenshot-FastAPI-process-test-response.png)
+![OGC API - Processes response](./images/Screenshot-FastAPI-process-test-response.png)
 
 
 ### TODO
